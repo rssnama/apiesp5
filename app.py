@@ -27,7 +27,8 @@ def upload_image():
         path_to_tesseract=r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe"
         #Imagepath='gfg.jpeg'
         pytesseract.tesseract_cmd=path_to_tesseract
-        text=pytesseract.image_to_string(Image.open("gfg.jpeg"))
+        img = Image.open("gfg.jpeg")
+        text=pytesseract.image_to_string(img, lang ="hin")
 
         return jsonify({
             "ocr_result": text,
